@@ -100,7 +100,7 @@ export const auth = betterAuth({
 
               <p style="word-break:break-all;font-size:14px;">
                 <a href="${verificationUrl}" style="color:#2563eb;">
-                  ${verificationUrl}
+                  ${url}
                 </a>
               </p>
 
@@ -136,5 +136,12 @@ export const auth = betterAuth({
             throw err;
            }
         },
-    }
+    },
+
+    socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID as string, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string, 
+        }, 
+    },
 });
